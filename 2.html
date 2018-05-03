@@ -1,0 +1,56 @@
+<head>
+  <title>Audio Visualizer</title>
+  <script src="https://aframe.io/releases/0.3.1/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-audioanalyser-component/dist/aframe-audioanalyser-components.min.js"></script>
+  <script src="https://rawgit.com/aframevr/aframe/917c06889ee1f3f79b7b1bbd9eab9815f9512503/dist/aframe.min.js"></script>
+
+  <script src="../components/audioanalyser-levels-scale.js"></script>
+
+
+</head>
+
+<body>
+  <a-scene antialias="true">
+    <a-assets>
+      <audio id="song" src="tempest.m4a" autoplay loop></audio>
+    </a-assets>
+
+    <!-- Audio analyser. -->
+    <a-entity id="analyser"
+        audioanalyser="src: #song"
+        audioanalyser-waveform="radius: 0.5"
+        rotation="90 0 0"
+        position="0 30 0"
+      ></a-entity>
+
+<!--analyzer-->
+
+    <a-entity
+        audioanalyser-levels-scale="analyserEl: #analyser; max: 50; multiplier: 0.06"
+        entity-generator="mixin: bar; num: 128"
+        layout="type: circle; radius: 10"
+        rotation="0 180 0"
+    ></a-entity>
+
+    <a-light type="ambient" color="#222222"></a-light>
+
+    <a-light
+      audioanalyser-volume-bind="analyserEl: #analyser; component: light; property: intensity; max: 2.2; multiplier: .01"
+      position="1 2 1"
+      type="point"
+    ></a-light>
+
+    <a-entity id="sky"
+      geometry="primitive: sphere; radius: 500; phiLength: 360; phiStart: 0; thetaLength: 90"
+      material="shader: flat; side: back; height: 2048; color: #CDCDCD; width: 2048"
+    ></a-entity>
+
+    <a-entity id="ground"
+      geometry="primitive: circle; radius: 30.5"
+      rotation="-90 0 0"
+      material="color: "
+    ></a-entity>
+
+
+  </a-scene>
+</body>
