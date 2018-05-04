@@ -1,56 +1,101 @@
 <head>
-  <title>Audio Visualizer</title>
-  <script src="https://aframe.io/releases/0.3.1/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-audioanalyser-component/dist/aframe-audioanalyser-components.min.js"></script>
-  <script src="https://rawgit.com/aframevr/aframe/917c06889ee1f3f79b7b1bbd9eab9815f9512503/dist/aframe.min.js"></script>
-
-  <script src="../components/audioanalyser-levels-scale.js"></script>
-
-
+  <title>My A-Frame Scene</title>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> 
 </head>
-
+ 
 <body>
-  <a-scene antialias="true">
-    <a-assets>
-      <audio id="song" src="tempest.m4a" autoplay loop></audio>
-    </a-assets>
+  <a-scene>
 
-    <!-- Audio analyser. -->
-    <a-entity id="analyser"
-        audioanalyser="src: #song"
-        audioanalyser-waveform="radius: 0.5"
-        rotation="90 0 0"
-        position="0 30 0"
-      ></a-entity>
+  <a-assets antialias="true">
+    <audio id="song"  autoplay loop src="tempest.m4a"></audio>
+    <img id="space" src="space.jpg">
+  </a-assets>
 
-<!--analyzer-->
 
-    <a-entity
-        audioanalyser-levels-scale="analyserEl: #analyser; max: 50; multiplier: 0.06"
-        entity-generator="mixin: bar; num: 128"
-        layout="type: circle; radius: 10"
-        rotation="0 180 0"
-    ></a-entity>
+ 
+      
+<!-- light blue-->
+      <a-entity scale="4 3 5" geometry="primitive: box" position="-5 12 -5" material="color: #447cd6; roughness: 0.2; transparent: true; opacity: 0.4 ">
+        <a-animation easing="linear" attribute="rotation" dur="20000" to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity>
 
-    <a-light type="ambient" color="#222222"></a-light>
 
-    <a-light
-      audioanalyser-volume-bind="analyserEl: #analyser; component: light; property: intensity; max: 2.2; multiplier: .01"
-      position="1 2 1"
-      type="point"
-    ></a-light>
+<!-- Dark blue-->
+      <a-entity scale="9 3 12" geometry="primitive: box" position="3 9 -7" material="color: #190c47; roughness: 0.1; transparent: true; opacity: 0.2 ">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="360 0 360" repeat="indefinite"></a-animation>
+      </a-entity>
+
+
+<!--Red-->
+      <a-entity scale="2 2 2" position="0 5 -5">
+        <a-box color="#c45421" position="0 7 -5"></a-box>
+        <a-animation attribute="rotation" dur="6000" fill="forwards" to="120 45 360" direction = alternate repeat="indefinite"></a-animation>
+      </a-entity>
+
+<!-- Dark green-->
+      <a-entity scale="5 3 6" geometry="primitive: ring" position="5 8 5" material="color: #190c47; roughness: 0.5; transparent: true; opacity: 0.4 width: 2000">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="90 212 180" direction = alternate repeat="indefinite"></a-animation>
+      </a-entity>
+
+ 
+
+<!-- green-->
+      <a-entity scale="6 2 2" geometry="primitive: box" position="-8 7 6" material="color: #689164; roughness: 0.2; transparent: true; opacity: 0.6 ">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 12 360" repeat="indefinite"></a-animation>
+      </a-entity>
+
+
+<!-- green-->
+      <a-entity scale="6 2 2" geometry="primitive: box" material="color: #b421c6; roughness: 0.2; transparent: true; opacity: 0.5 ">
+        <a-animation easing="linear" attribute="position" dur="7000" from = "6 3 -6" to="6 3 8" direction = alternate  repeat="indefinite"></a-animation>
+      </a-entity>
+
+
+<!-- yellow-->
+      <a-entity  geometry="primitive: tetrahedron" material="color: #e2e05a; roughness: 0.2; transparent: true; opacity: 0.8 ">
+        <a-animation easing="linear" attribute="position" dur="6000" from = "-5 3 -6" to=" -2 7 7" direction = alternate  repeat="indefinite"></a-animation>
+      </a-entity>
+
+<!-- light blue-->
+      <a-entity scale="9 5 6" geometry="primitive: box" position="1 7 6" material="color: #114ce0; roughness: 0.1; transparent: true; opacity: 0.3 ">
+        <a-animation easing="linear" attribute="rotation" dur="7500" to="180 20 360" repeat="indefinite"></a-animation>
+      </a-entity>
+
+
+<!--Red-->
+      <a-entity scale="1 3 5" >
+        <a-box color="#b9eabe" position="-4 8 -3" material= "transparent: true; opacity: 0.8 "></a-box>
+        <a-animation attribute="rotation" dur="8000" fill="forwards" to="120 35 30" direction = alternate repeat="indefinite"></a-animation>
+      </a-entity>
+
+
+
+
+    <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
+
 
     <a-entity id="sky"
-      geometry="primitive: sphere; radius: 500; phiLength: 360; phiStart: 0; thetaLength: 90"
-      material="shader: flat; side: back; height: 2048; color: #CDCDCD; width: 2048"
-    ></a-entity>
+        geometry="primitive: sphere; radius: 500"
+        material="shader: flat; side: back; color: #424851; width: 2048; metalness: 2 ; opacity: 1 transparent: true"
+      ></a-entity>
+
+
+
+
+    <a-light type="ambient" color="#222"></a-light>
+      <a-light
+        audioanalyser-volume-bind="analyserEl: #analyser; component: light; property: intensity; max: 2.2; multiplier: .01"
+        position="1 2 1"
+        type="point"
+    ></a-light>
 
     <a-entity id="ground"
-      geometry="primitive: circle; radius: 30.5"
-      rotation="-90 0 0"
-      material="color: "
-    ></a-entity>
+        geometry="primitive: circle; radius: 30.5"
+        rotation="-90 0 0"
+        material="color: #2e2f30"
+      ></a-entity>
 
 
+ 
   </a-scene>
 </body>
