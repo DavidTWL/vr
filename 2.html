@@ -7,8 +7,9 @@
   <a-scene>
 
   <a-assets antialias="true">
-    <audio id="song"  autoplay loop src="tempest.m4a"></audio>
-    <img id="space" src="space.jpg">
+<!--     <audio id="song"  autoplay loop src="tempest.m4a"></audio>
+ --> <img id="sky" src="https://www.walldevil.com/gradient-background-turquoise-wallpaper-1806/" crossorigin="anonymous" />
+
   </a-assets>
 
 
@@ -74,10 +75,13 @@
     <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
 
 
-    <a-entity id="sky"
+   <!--  <a-entity id="sky"
         geometry="primitive: sphere; radius: 500"
         material="shader: flat; side: back; color: #424851; width: 2048; metalness: 2 ; opacity: 1 transparent: true"
-      ></a-entity>
+      ></a-entity> -->
+
+
+
 
 
 
@@ -95,6 +99,7 @@
         material="color: #2e2f30"
       ></a-entity>
 
+      <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
  
   </a-scene>
