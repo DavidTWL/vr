@@ -5,7 +5,7 @@
 </head>
  
 <body>
-  <a-scene antialias="true" fps = 20>
+  <a-scene antialias="true">
 
   <a-assets >
 <!--     <audio id="song"  autoplay loop src="tempest.m4a"></audio>
@@ -15,47 +15,50 @@
 
   </a-assets>
 
+
+
+
       
 <!-- light blue-->
-      <a-entity scale="4 3 5" geometry="primitive: box" mirror= "resolution: 512" position="-5 12 -5" material="color: #447cd6; roughness: 0.2; transparent: true; opacity: 0.7 ">
+      <a-entity scale="4 3 5" geometry="primitive: box" mirror= "resolution: 512" position="-5 11 -5" material="color: #447cd6; roughness: 0.2; transparent: true; opacity: 0.7 ">
         <a-animation easing="linear" attribute="rotation" dur="20000" to="0 0 360" repeat="indefinite"></a-animation>
       </a-entity>
 
 
 <!-- Dark blue-->
-      <a-entity scale="9 3 12" geometry="primitive: box"  position="3 9 -7" material="color: #190c47; roughness: 0.1; transparent: true; opacity: 0.2 ">
+      <a-entity scale="9 3 12" geometry="primitive: box"  position="3 8 -7" material="color: #190c47; roughness: 0.1; transparent: true; opacity: 0.2 ">
         <a-animation easing="linear" attribute="rotation" dur="10000" to="360 0 0" repeat="indefinite"></a-animation>
       </a-entity>
 
 
 <!--Red-->
-      <a-entity scale="2 2 2" position="0 5 -5">
+      <a-entity scale="2 2 2" position="0 4 -5">
         <a-box color="#c45421" position="0 7 -5"></a-box>
         <a-animation attribute="rotation" dur="6000" fill="forwards" to="120 45 360" direction = alternate repeat="indefinite"></a-animation>
       </a-entity>
 
 <!--Red-->
-      <a-entity scale="4 3 2" position="0 2 -5">
+      <a-entity scale="4 3 2" position="0 1 -5">
         <a-box color="#3c3ca3" position="0 6 4"></a-box>
         <a-animation attribute="rotation" dur="10000" fill="forwards" to="45 20 360" direction = alternate repeat="indefinite"></a-animation>
       </a-entity>
 
 <!-- Dark green-->
-      <a-entity scale="5 3 6" geometry="primitive: ring" position="5 6 5" material="color: #190c47; roughness: 0.5; transparent: true; opacity: 0.4 width: 2000">
+      <a-entity scale="5 3 6" geometry="primitive: ring" position="5 4 5" material="color: #190c47; roughness: 0.5; transparent: true; opacity: 0.4 width: 2000">
         <a-animation easing="linear" attribute="rotation" dur="10000" to="90 212 180" direction = alternate repeat="indefinite"></a-animation>
       </a-entity>
 
 
 
   <!-- Dark green-->
-      <a-entity scale="8 8 8 " geometry="primitive: ring" position="-8 10 2" material="color: #green; roughness: 0.5; transparent: true; opacity: 0.4 width: 2000">
+      <a-entity scale="8 8 8 " geometry="primitive: ring" position="-8 8 2" material="color: #green; roughness: 0.5; transparent: true; opacity: 0.4 width: 2000">
         <a-animation easing="linear" attribute="rotation" dur="10000" to="90 212 180" direction = alternate repeat="indefinite"></a-animation>
       </a-entity>
 
  
 
 <!-- green-->
-      <a-entity scale="6 2 2" geometry="primitive: box" mirror= "resolution: 512" position="-8 7 6" material="color: #689164; roughness: 0.2; transparent: true; opacity: 0.6 ">
+      <a-entity scale="6 2 2" geometry="primitive: box" mirror= "resolution: 512" position="-8 5 6" material="color: #689164; roughness: 0.2; transparent: true; opacity: 0.6 ">
         <a-animation easing="linear" attribute="rotation" dur="10000" to="0 12 360" repeat="indefinite"></a-animation>
       </a-entity>
 
@@ -69,19 +72,19 @@
 
 <!-- yellow-->
       <a-entity  geometry="primitive: tetrahedron" material="color: #e2e05a; roughness: 0.2; transparent: true; opacity: 0.8 ">
-        <a-animation easing="linear" attribute="position" dur="6000" from = "-5 3 -6" to=" -2 7 7" direction = alternate  repeat="indefinite"></a-animation>
+        <a-animation easing="linear" attribute="position" dur="6000" from = "-5 2 -6" to=" -2 5 7" direction = alternate  repeat="indefinite"></a-animation>
         <a-animation easing="linear" attribute="rotation" dur="10000" to="0 12 360" repeat="indefinite"></a-animation>
       </a-entity>
 
 
 <!-- yellow-->
       <a-entity  geometry="primitive: tetrahedron" material="color: #blue; roughness: 0.2; transparent: true; opacity: 0. ">
-        <a-animation easing="linear" attribute="position" dur="8000" from = "2 4 4" to=" -1 8 6" direction = alternate  repeat="indefinite"></a-animation>
+        <a-animation easing="linear" attribute="position" dur="8000" from = "2 3 4" to=" -1 7 6" direction = alternate  repeat="indefinite"></a-animation>
         <a-animation easing="linear" attribute="rotation" dur="10000" to="0 12 360" repeat="indefinite"></a-animation>
       </a-entity>
 
 <!-- light blue-->
-      <a-entity scale="9 5 6" geometry="primitive: box" mirror= "resolution: 512" position="1 7 6" material="color: #114ce0; roughness: 0.1; transparent: true; opacity: 0.3 ">
+      <a-entity scale="9 5 6" geometry="primitive: box" mirror= "resolution: 512" position="1 6 6" material="color: #114ce0; roughness: 0.1; transparent: true; opacity: 0.3 ">
         <a-animation easing="linear" attribute="rotation" dur="7500" to="180 20 360" repeat="indefinite"></a-animation>
       </a-entity>
 
@@ -95,7 +98,7 @@
 
 <!--Red-->
       <a-entity scale="1 3 5" >
-        <a-box color="#b9eabe" position="-4 8 -3" material= "transparent: true; opacity: 0.8 "></a-box>
+        <a-box color="#b9eabe" position="-4 6 -3" material= "transparent: true; opacity: 0.8 "></a-box>
         <a-animation attribute="rotation" dur="8000" fill="forwards" to="120 35 30" direction = alternate repeat="indefinite"></a-animation>
       </a-entity>
 
